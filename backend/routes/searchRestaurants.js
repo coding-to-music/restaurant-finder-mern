@@ -10,9 +10,7 @@ router.get('/', async (req, res) => {
     borough,
     cuisine,
     name,
-    sortByGrades,
-    sortByPopularity,
-    sortByDistance,
+    sort,
     geoOptions,
   } = req.body;
 
@@ -41,13 +39,13 @@ router.get('/', async (req, res) => {
     },
   });
 
-  if (sortByGrades === 'ascending')
+  if (sort === 'Ascending Grades')
     aggregationPipeline.push({ $sort: { avgGrade: 1 } });
-  if (sortByGrades === 'descending')
+  if (sort === 'Descending Grades')
     aggregationPipeline.push({ $sort: { avgGrade: -1 } });
-  if (sortByPopularity)
+  if (sort === 'Popularity')
     aggregationPipeline.push({ $sort: { numberOfGrades: -1 } });
-  if (sortByDistance)
+  if (sort === 'Distance')
     aggregationPipeline.push({ $sort: { distanceFromUser: 1 } });
 
   aggregationPipeline.push(
@@ -73,13 +71,7 @@ router.get('/', async (req, res) => {
 });
 
 router.get('/byNeighborhood', async (req, res) => {
-  const {
-    neighborhoodId,
-    queryLimit,
-    queryPage,
-    sortByGrades,
-    sortByPopularity,
-  } = req.body;
+  const { neighborhoodId, queryLimit, queryPage, sort } = req.body;
 
   try {
     const database = databaseFunctions.getDatabase();
@@ -112,11 +104,11 @@ router.get('/byNeighborhood', async (req, res) => {
       $project: { grades: 0, restaurant_id: 0 },
     });
 
-    if (sortByGrades === 'ascending')
+    if (sort === 'gradesAscending')
       aggregationPipeline.push({ $sort: { avgGrade: 1 } });
-    if (sortByGrades === 'descending')
+    if (sort === 'gradesDescending')
       aggregationPipeline.push({ $sort: { avgGrade: -1 } });
-    if (sortByPopularity)
+    if (sort === 'popularity')
       aggregationPipeline.push({ $sort: { numberOfGrades: -1 } });
 
     aggregationPipeline.push(
