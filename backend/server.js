@@ -5,7 +5,6 @@ const databaseFunctions = require('./db');
 
 app.use(express.json());
 
-app.use('/api/fetchOptions', require('./routes/fetchOptions'));
 app.use('/api/searchRestaurants', require('./routes/searchRestaurants'));
 
 databaseFunctions.initializeDatabase((err, database) => {
