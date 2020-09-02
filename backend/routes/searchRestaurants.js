@@ -3,7 +3,7 @@ const { ObjectID } = require('mongodb');
 const router = express.Router();
 const databaseFunctions = require('../db');
 
-router.get('/', async (req, res) => {
+router.get('/byDefault', async (req, res) => {
   const {
     queryLimit,
     queryPage,
