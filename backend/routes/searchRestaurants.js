@@ -16,45 +16,45 @@ router.get('/byDefault', async (req, res) => {
 
   const aggregationPipeline = [];
 
-  if (name && geoOptions.coordinates === [])
-    aggregationPipeline.unshift({ $match: { $text: { $search: name } } });
-  if (borough.length > 0)
-    aggregationPipeline.unshift({ $match: { borough: { $in: borough } } });
-  if (cuisine.length > 0)
-    aggregationPipeline.unshift({ $match: { cuisine: { $in: cuisine } } });
-  if (geoOptions.coordinates !== [])
-    aggregationPipeline.unshift({
-      $geoNear: {
-        near: { type: 'Point', coordinates: geoOptions.coordinates },
-        distanceField: 'distanceFromUser',
-        spherical: true,
-        maxDistance: geoOptions.maxDistance,
+  try {
+    if (name && geoOptions.coordinates === [])
+      aggregationPipeline.unshift({ $match: { $text: { $search: name } } });
+    if (borough.length > 0)
+      aggregationPipeline.unshift({ $match: { borough: { $in: borough } } });
+    if (cuisine.length > 0)
+      aggregationPipeline.unshift({ $match: { cuisine: { $in: cuisine } } });
+    if (geoOptions.coordinates !== [])
+      aggregationPipeline.unshift({
+        $geoNear: {
+          near: { type: 'Point', coordinates: geoOptions.coordinates },
+          distanceField: 'distanceFromUser',
+          spherical: true,
+          maxDistance: geoOptions.maxDistance,
+        },
+      });
+
+    aggregationPipeline.push({
+      $addFields: {
+        avgGrade: { $avg: '$grades.score' },
+        numberOfGrades: { $size: '$grades' },
       },
     });
 
-  aggregationPipeline.push({
-    $addFields: {
-      avgGrade: { $avg: '$grades.score' },
-      numberOfGrades: { $size: '$grades' },
-    },
-  });
+    if (sort === 'Ascending Grades')
+      aggregationPipeline.push({ $sort: { avgGrade: 1 } });
+    if (sort === 'Descending Grades')
+      aggregationPipeline.push({ $sort: { avgGrade: -1 } });
+    if (sort === 'Popularity')
+      aggregationPipeline.push({ $sort: { numberOfGrades: -1 } });
+    if (sort === 'Distance')
+      aggregationPipeline.push({ $sort: { distanceFromUser: 1 } });
 
-  if (sort === 'Ascending Grades')
-    aggregationPipeline.push({ $sort: { avgGrade: 1 } });
-  if (sort === 'Descending Grades')
-    aggregationPipeline.push({ $sort: { avgGrade: -1 } });
-  if (sort === 'Popularity')
-    aggregationPipeline.push({ $sort: { numberOfGrades: -1 } });
-  if (sort === 'Distance')
-    aggregationPipeline.push({ $sort: { distanceFromUser: 1 } });
+    aggregationPipeline.push(
+      { $project: { grades: 0, restaurant_id: 0 } },
+      { $skip: (queryPage - 1) * queryLimit },
+      { $limit: queryLimit }
+    );
 
-  aggregationPipeline.push(
-    { $project: { grades: 0, restaurant_id: 0 } },
-    { $skip: (queryPage - 1) * queryLimit },
-    { $limit: queryLimit }
-  );
-
-  try {
     const restaurantCollection = databaseFunctions
       .getDatabase()
       .collection('restaurants');
