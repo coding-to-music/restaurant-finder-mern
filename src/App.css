@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+:root {
+  --pinkLight: #faaab0;
+  --pink: #f27781;
+  --pinkDark: #d65660;
+
+  --navyBlueLight: #2541db;
+  --navyBlue: #18298c;
+  --navyBlueDark: #08155c;
+
+  --tealLight: #05fcb6;
+  --teal: #04bf8a;
+  --tealDark: #039c70;
+
+  --yellowLight: #ffe352;
+  --yellow: #f2cf1d;
+  --yellowDark: #d1b004;
+
+  --orangeLight: #ffb836;
+  --orange: #f29f05;
+  --orangeDark: #cf8602;
+
+  --darkFont: hsl(0, 0%, 20%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'Cheri';
+  src: url('./resources/fonts/cheri.TTF');
+}
+
+@font-face {
+  font-family: 'Cuddly';
+  src: url('./resources/fonts/cuddly.ttf');
+}
+
+body {
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  outline: none;
+}
+
+input {
+  outline: none;
+}
+
+button {
+  outline: none;
+  cursor: pointer;
+}
+
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.pink {
+  color: var(--pink);
+}
+
+.navyBlue {
+  color: var(--navyBlue);
+}
+
+.teal {
+  color: var(--teal);
+}
+
+.tealDark {
+  color: var(--tealDark);
+}
+
+.tealDarkShadow {
+  text-shadow: 0 0 20px var(--tealDark);
+}
+
+.yellow {
+  color: var(--yellow);
+}
+
+.orange {
+  color: var(--orange);
+}

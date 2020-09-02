@@ -1,0 +1,22 @@
+[
+  {
+    "_id": "Manhattan",
+    "total": 10258
+  },
+  {
+    "_id": "Brooklyn",
+    "total": 6085
+  },
+  {
+    "_id": "Queens",
+    "total": 5656
+  },
+  {
+    "_id": "Bronx",
+    "total": 2338
+  },
+  {
+    "_id": "Staten Island",
+    "total": 969
+  }
+]

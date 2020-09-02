@@ -1,0 +1,94 @@
+.Navbar {
+  position: fixed;
+  width: 100%;
+  padding: 1rem 0;
+  color: #fff;
+}
+
+.Navbar .container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.NavbarLogo {
+  display: flex;
+  align-items: center;
+}
+
+.NavbarLogo img {
+  max-width: 100px;
+  margin-right: 0.5rem;
+  transition: 0.3s ease-out;
+}
+
+.NavbarLogo:hover img {
+  transform: rotate(-10deg) scale(1.1);
+}
+
+.NavbarLogo p {
+  font-family: 'Cheri', sans-serif;
+  font-size: 2.5rem;
+  transition: 0.3s ease-out;
+}
+
+.NavbarLogo:hover p {
+  transform: rotate(2deg) scale(1.01);
+}
+
+.Navbar nav {
+  display: flex;
+}
+
+.Navbar nav a {
+  margin: 0 1rem;
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  font-family: 'Cuddly', sans-serif;
+  font-size: 1.5rem;
+  padding: 5px 16px;
+  border-radius: 20px;
+  border: 7px solid;
+  transition: 0.3s ease-out;
+  background-color: #9e9d9d;
+  border-color: #575757;
+}
+
+.Navbar nav a:nth-child(1).active {
+  background-color: var(--pink);
+  border-color: var(--pinkDark);
+}
+
+.Navbar nav a:nth-child(2).active {
+  background-color: var(--navyBlue);
+  border-color: var(--navyBlueDark);
+}
+
+.Navbar nav a:nth-child(3).active {
+  background-color: var(--orange);
+  border-color: var(--orangeDark);
+}
+
+.Navbar nav a:nth-child(1):hover {
+  border-color: var(--pinkLight);
+  background-color: var(--pink);
+}
+
+.Navbar nav a:nth-child(2):hover {
+  border-color: var(--navyBlueLight);
+  background-color: var(--navyBlue);
+}
+
+.Navbar nav a:nth-child(3):hover {
+  border-color: var(--orangeLight);
+  background-color: var(--orange);
+}
+
+.Navbar nav img {
+  max-width: 70px;
+  transition: transform 0.1s ease-out;
+}
+
+.Navbar nav a:hover img {
+  transform: scale(1.05);
+}

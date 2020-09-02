@@ -1,0 +1,342 @@
+[
+  {
+    "_id": "American",
+    "total": 6181
+  },
+  {
+    "_id": "Chinese",
+    "total": 2418
+  },
+  {
+    "_id": "Café/Coffee/Tea",
+    "total": 1214
+  },
+  {
+    "_id": "Pizza",
+    "total": 1163
+  },
+  {
+    "_id": "Italian",
+    "total": 1069
+  },
+  {
+    "_id": "Other",
+    "total": 1011
+  },
+  {
+    "_id": "Latin (Cuban, Dominican, Puerto Rican, South & Central American)",
+    "total": 850
+  },
+  {
+    "_id": "Japanese",
+    "total": 760
+  },
+  {
+    "_id": "Mexican",
+    "total": 754
+  },
+  {
+    "_id": "Bakery",
+    "total": 691
+  },
+  {
+    "_id": "Caribbean",
+    "total": 657
+  },
+  {
+    "_id": "Spanish",
+    "total": 637
+  },
+  {
+    "_id": "Donuts",
+    "total": 479
+  },
+  {
+    "_id": "Pizza/Italian",
+    "total": 468
+  },
+  {
+    "_id": "Sandwiches",
+    "total": 459
+  },
+  {
+    "_id": "Hamburgers",
+    "total": 433
+  },
+  {
+    "_id": "Chicken",
+    "total": 410
+  },
+  {
+    "_id": "Ice Cream, Gelato, Yogurt, Ices",
+    "total": 348
+  },
+  {
+    "_id": "French",
+    "total": 344
+  },
+  {
+    "_id": "Delicatessen",
+    "total": 321
+  },
+  {
+    "_id": "Jewish/Kosher",
+    "total": 316
+  },
+  {
+    "_id": "Indian",
+    "total": 316
+  },
+  {
+    "_id": "Asian",
+    "total": 309
+  },
+  {
+    "_id": "Thai",
+    "total": 285
+  },
+  {
+    "_id": "Juice, Smoothies, Fruit Salads",
+    "total": 273
+  },
+  {
+    "_id": "Korean",
+    "total": 262
+  },
+  {
+    "_id": "Sandwiches/Salads/Mixed Buffet",
+    "total": 255
+  },
+  {
+    "_id": "Mediterranean",
+    "total": 219
+  },
+  {
+    "_id": "Irish",
+    "total": 190
+  },
+  {
+    "_id": "Middle Eastern",
+    "total": 168
+  },
+  {
+    "_id": "Bagels/Pretzels",
+    "total": 168
+  },
+  {
+    "_id": "Seafood",
+    "total": 147
+  },
+  {
+    "_id": "Tex-Mex",
+    "total": 143
+  },
+  {
+    "_id": "Greek",
+    "total": 111
+  },
+  {
+    "_id": "Vegetarian",
+    "total": 102
+  },
+  {
+    "_id": "Russian",
+    "total": 88
+  },
+  {
+    "_id": "Steak",
+    "total": 86
+  },
+  {
+    "_id": "Bottled beverages, including water, sodas, juices, etc.",
+    "total": 72
+  },
+  {
+    "_id": "Turkish",
+    "total": 70
+  },
+  {
+    "_id": "Peruvian",
+    "total": 68
+  },
+  {
+    "_id": "African",
+    "total": 68
+  },
+  {
+    "_id": "Vietnamese/Cambodian/Malaysia",
+    "total": 66
+  },
+  {
+    "_id": "Eastern European",
+    "total": 65
+  },
+  {
+    "_id": "Chinese/Japanese",
+    "total": 59
+  },
+  {
+    "_id": "Continental",
+    "total": 58
+  },
+  {
+    "_id": "Barbecue",
+    "total": 52
+  },
+  {
+    "_id": "Soups & Sandwiches",
+    "total": 51
+  },
+  {
+    "_id": "Salads",
+    "total": 45
+  },
+  {
+    "_id": "Soul Food",
+    "total": 44
+  },
+  {
+    "_id": "Armenian",
+    "total": 40
+  },
+  {
+    "_id": "Bangladeshi",
+    "total": 36
+  },
+  {
+    "_id": "Hotdogs",
+    "total": 34
+  },
+  {
+    "_id": "Pakistani",
+    "total": 31
+  },
+  {
+    "_id": "German",
+    "total": 31
+  },
+  {
+    "_id": "Tapas",
+    "total": 28
+  },
+  {
+    "_id": "Brazilian",
+    "total": 26
+  },
+  {
+    "_id": "Filipino",
+    "total": 26
+  },
+  {
+    "_id": "Polish",
+    "total": 25
+  },
+  {
+    "_id": "Creole",
+    "total": 24
+  },
+  {
+    "_id": "Not Listed/Not Applicable",
+    "total": 19
+  },
+  {
+    "_id": "Ethiopian",
+    "total": 18
+  },
+  {
+    "_id": "English",
+    "total": 16
+  },
+  {
+    "_id": "Australian",
+    "total": 16
+  },
+  {
+    "_id": "Hotdogs/Pretzels",
+    "total": 16
+  },
+  {
+    "_id": "Chinese/Cuban",
+    "total": 16
+  },
+  {
+    "_id": "Pancakes/Waffles",
+    "total": 16
+  },
+  {
+    "_id": "Moroccan",
+    "total": 15
+  },
+  {
+    "_id": "Egyptian",
+    "total": 14
+  },
+  {
+    "_id": "Afghan",
+    "total": 14
+  },
+  {
+    "_id": "Southwestern",
+    "total": 9
+  },
+  {
+    "_id": "Portuguese",
+    "total": 8
+  },
+  {
+    "_id": "Indonesian",
+    "total": 8
+  },
+  {
+    "_id": "Fruits/Vegetables",
+    "total": 7
+  },
+  {
+    "_id": "Cajun",
+    "total": 7
+  },
+  {
+    "_id": "Scandinavian",
+    "total": 7
+  },
+  {
+    "_id": "Czech",
+    "total": 6
+  },
+  {
+    "_id": "Nuts/Confectionary",
+    "total": 6
+  },
+  {
+    "_id": "Soups",
+    "total": 4
+  },
+  {
+    "_id": "Hawaiian",
+    "total": 3
+  },
+  {
+    "_id": "CafÃ©/Coffee/Tea",
+    "total": 2
+  },
+  {
+    "_id": "Iranian",
+    "total": 2
+  },
+  {
+    "_id": "Chilean",
+    "total": 1
+  },
+  {
+    "_id": "Creole/Cajun",
+    "total": 1
+  },
+  {
+    "_id": "Polynesian",
+    "total": 1
+  },
+  {
+    "_id": "Californian",
+    "total": 1
+  }
+]

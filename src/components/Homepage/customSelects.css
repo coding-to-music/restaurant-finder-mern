@@ -1,0 +1,306 @@
+/* ========== Boroughs select field ==========  */
+
+.SearchBlock .formGroupRow:nth-child(2) .formGroup:nth-child(1) label {
+  color: var(--pinkDark);
+  text-shadow: 0 0 20px var(--pinkDark);
+}
+
+.SearchBlock
+  .formGroupRow:nth-child(2)
+  .formGroup:nth-child(1)
+  .customSelect__control {
+  background-color: var(--pink);
+  border-color: var(--pinkDark);
+  box-shadow: 0 0 20px var(--pinkDark);
+}
+
+.SearchBlock
+  .formGroupRow:nth-child(2)
+  .formGroup:nth-child(1)
+  .customSelect__control--is-focused {
+  box-shadow: 0 0 20px var(--pinkLight);
+  background-color: var(--pinkLight);
+  border-color: var(--pink);
+}
+
+.SearchBlock
+  .formGroupRow:nth-child(2)
+  .formGroup:nth-child(1)
+  .customSelect__indicator {
+  color: var(--pinkDark);
+}
+
+.SearchBlock
+  .formGroupRow:nth-child(2)
+  .formGroup:nth-child(1)
+  .customSelect__indicator-separator {
+  background-color: var(--pinkDark);
+}
+
+.SearchBlock
+  .formGroupRow:nth-child(2)
+  .formGroup:nth-child(1)
+  .customSelect__placeholder {
+  color: var(--pinkDark);
+}
+
+.SearchBlock
+  .formGroupRow:nth-child(2)
+  .formGroup:nth-child(1)
+  .customSelect__input {
+  color: var(--pinkDark);
+}
+
+.SearchBlock
+  .formGroupRow:nth-child(2)
+  .formGroup:nth-child(1)
+  .customSelect__multi-value {
+  background-color: var(--pinkDark);
+}
+
+.SearchBlock
+  .formGroupRow:nth-child(2)
+  .formGroup:nth-child(1)
+  .customSelect__menu {
+  background-color: var(--pinkLight);
+  color: var(--pinkDark);
+}
+
+.SearchBlock
+  .formGroupRow:nth-child(2)
+  .formGroup:nth-child(1)
+  .customSelect__option--is-focused {
+  color: var(--pinkLight);
+  background-color: var(--pinkDark);
+}
+
+/* ========== Cuisines select field ==========  */
+
+.SearchBlock .formGroupRow:nth-child(2) .formGroup:nth-child(2) label {
+  color: var(--orangeDark);
+  text-shadow: 0 0 20px var(--orangeDark);
+}
+
+.SearchBlock
+  .formGroupRow:nth-child(2)
+  .formGroup:nth-child(2)
+  .customSelect__control {
+  background-color: var(--orange);
+  border-color: var(--orangeDark);
+  box-shadow: 0 0 20px var(--orangeDark);
+}
+
+.SearchBlock
+  .formGroupRow:nth-child(2)
+  .formGroup:nth-child(2)
+  .customSelect__control--is-focused {
+  box-shadow: none;
+  background-color: var(--orangeLight);
+  border-color: var(--orange);
+  box-shadow: 0 0 20px var(--orangeLight);
+}
+
+.SearchBlock
+  .formGroupRow:nth-child(2)
+  .formGroup:nth-child(2)
+  .customSelect__indicator {
+  color: var(--orangeDark);
+}
+
+.SearchBlock
+  .formGroupRow:nth-child(2)
+  .formGroup:nth-child(2)
+  .customSelect__indicator-separator {
+  background-color: var(--orangeDark);
+}
+
+.SearchBlock
+  .formGroupRow:nth-child(2)
+  .formGroup:nth-child(2)
+  .customSelect__placeholder {
+  color: var(--orangeDark);
+}
+
+.SearchBlock
+  .formGroupRow:nth-child(2)
+  .formGroup:nth-child(2)
+  .customSelect__input {
+  color: var(--orangeDark);
+}
+
+.SearchBlock
+  .formGroupRow:nth-child(2)
+  .formGroup:nth-child(2)
+  .customSelect__multi-value {
+  background-color: var(--orangeDark);
+}
+
+.SearchBlock
+  .formGroupRow:nth-child(2)
+  .formGroup:nth-child(2)
+  .customSelect__menu {
+  background-color: var(--orangeLight);
+  color: var(--orangeDark);
+}
+
+.SearchBlock
+  .formGroupRow:nth-child(2)
+  .formGroup:nth-child(2)
+  .customSelect__option--is-focused {
+  color: var(--orangeLight);
+  background-color: var(--orangeDark);
+}
+
+/* ========== Sort select field ==========  */
+
+.SearchBlock .formGroupRow:nth-child(3) .formGroup:nth-child(1) label {
+  color: var(--yellowDark);
+  text-shadow: 0 0 20px var(--yellowDark);
+}
+
+.SearchBlock
+  .formGroupRow:nth-child(3)
+  .formGroup:nth-child(1)
+  .customSelect__control {
+  background-color: var(--yellow);
+  border-color: var(--yellowDark);
+  box-shadow: 0 0 20px var(--yellowDark);
+}
+
+.SearchBlock
+  .formGroupRow:nth-child(3)
+  .formGroup:nth-child(1)
+  .customSelect__control--is-focused {
+  box-shadow: none;
+  background-color: var(--yellowLight);
+  border-color: var(--yellow);
+  box-shadow: 0 0 20px var(--yellowLight);
+}
+
+.SearchBlock
+  .formGroupRow:nth-child(3)
+  .formGroup:nth-child(1)
+  .customSelect__indicator {
+  color: var(--yellowDark);
+}
+
+.SearchBlock
+  .formGroupRow:nth-child(3)
+  .formGroup:nth-child(1)
+  .customSelect__indicator-separator {
+  background-color: var(--yellowDark);
+}
+
+.SearchBlock
+  .formGroupRow:nth-child(3)
+  .formGroup:nth-child(1)
+  .customSelect__placeholder {
+  color: var(--yellowDark);
+}
+
+.SearchBlock
+  .formGroupRow:nth-child(3)
+  .formGroup:nth-child(1)
+  .customSelect__input {
+  color: var(--yellowDark);
+}
+
+.SearchBlock
+  .formGroupRow:nth-child(3)
+  .formGroup:nth-child(1)
+  .customSelect__multi-value {
+  background-color: var(--yellowDark);
+}
+
+.SearchBlock
+  .formGroupRow:nth-child(3)
+  .formGroup:nth-child(1)
+  .customSelect__menu {
+  background-color: var(--yellowLight);
+  color: var(--yellowDark);
+}
+
+.SearchBlock
+  .formGroupRow:nth-child(3)
+  .formGroup:nth-child(1)
+  .customSelect__option--is-focused {
+  color: var(--yellowLight);
+  background-color: var(--yellowDark);
+}
+
+/* ========== Limit select field ==========  */
+
+.SearchBlock .formGroupRow:nth-child(3) .formGroup:nth-child(2) label {
+  color: var(--tealDark);
+  text-shadow: 0 0 20px var(--tealDark);
+}
+
+.SearchBlock
+  .formGroupRow:nth-child(3)
+  .formGroup:nth-child(2)
+  .customSelect__control {
+  background-color: var(--teal);
+  border-color: var(--tealDark);
+  box-shadow: 0 0 20px var(--tealDark);
+}
+
+.SearchBlock
+  .formGroupRow:nth-child(3)
+  .formGroup:nth-child(2)
+  .customSelect__control--is-focused {
+  box-shadow: none;
+  background-color: var(--tealLight);
+  border-color: var(--teal);
+  box-shadow: 0 0 20px var(--tealLight);
+}
+
+.SearchBlock
+  .formGroupRow:nth-child(3)
+  .formGroup:nth-child(2)
+  .customSelect__indicator {
+  color: var(--tealDark);
+}
+
+.SearchBlock
+  .formGroupRow:nth-child(3)
+  .formGroup:nth-child(2)
+  .customSelect__indicator-separator {
+  background-color: var(--tealDark);
+}
+
+.SearchBlock
+  .formGroupRow:nth-child(3)
+  .formGroup:nth-child(2)
+  .customSelect__placeholder {
+  color: var(--tealDark);
+}
+
+.SearchBlock
+  .formGroupRow:nth-child(3)
+  .formGroup:nth-child(2)
+  .customSelect__input {
+  color: var(--tealDark);
+}
+
+.SearchBlock
+  .formGroupRow:nth-child(3)
+  .formGroup:nth-child(2)
+  .customSelect__multi-value {
+  background-color: var(--tealDark);
+}
+
+.SearchBlock
+  .formGroupRow:nth-child(3)
+  .formGroup:nth-child(2)
+  .customSelect__menu {
+  background-color: var(--tealLight);
+  color: var(--tealDark);
+}
+
+.SearchBlock
+  .formGroupRow:nth-child(3)
+  .formGroup:nth-child(2)
+  .customSelect__option--is-focused {
+  color: var(--tealLight);
+  background-color: var(--tealDark);
+}
