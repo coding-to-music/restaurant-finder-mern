@@ -4,7 +4,7 @@ const router = express.Router();
 const databaseFunctions = require('../db');
 
 router.get('/byDefault', async (req, res) => {
-  const {
+  let {
     queryLimit,
     queryPage,
     borough,
@@ -12,18 +12,20 @@ router.get('/byDefault', async (req, res) => {
     name,
     sort,
     geoOptions,
-  } = req.body;
+  } = req.query;
+
+  queryLimit = parseInt(queryLimit);
 
   const aggregationPipeline = [];
 
   try {
     if (name && geoOptions.coordinates === [])
       aggregationPipeline.unshift({ $match: { $text: { $search: name } } });
-    if (borough.length > 0)
+    if (borough && borough.length > 0)
       aggregationPipeline.unshift({ $match: { borough: { $in: borough } } });
-    if (cuisine.length > 0)
+    if (cuisine && cuisine.length > 0)
       aggregationPipeline.unshift({ $match: { cuisine: { $in: cuisine } } });
-    if (geoOptions.coordinates !== [])
+    if (geoOptions && geoOptions.coordinates !== [])
       aggregationPipeline.unshift({
         $geoNear: {
           near: { type: 'Point', coordinates: geoOptions.coordinates },

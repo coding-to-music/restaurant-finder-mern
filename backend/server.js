@@ -4,6 +4,7 @@ const express = require('express');
 const app = express();
 const databaseFunctions = require('./db');
 
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.use('/api/searchRestaurants', require('./routes/searchRestaurants'));
