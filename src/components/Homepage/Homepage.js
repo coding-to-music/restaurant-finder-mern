@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import Select from 'react-select';
 import makeAnimated from 'react-select/animated';
+
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchRestaurantsByDefault } from '../../redux/slices/restaurantsSlice';
+
 import './Homepage.css';
 import './customSelects.css';
 
@@ -38,11 +42,13 @@ const limitsOptions = limits.map((option) => ({
 const animatedComponents = makeAnimated();
 
 const Homepage = () => {
+  const error = useSelector((state) => state.restaurants.error);
+  const dispatch = useDispatch();
   const [formData, setFormData] = useState({
     name: '',
     borough: [],
     cuisine: [],
-    sort: '',
+    sort: 'Popularity',
     queryLimit: 30,
     queryPage: 1,
   });
@@ -64,8 +70,9 @@ const Homepage = () => {
     }));
   };
 
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
+    dispatch(fetchRestaurantsByDefault(formData));
   };
 
   return (
