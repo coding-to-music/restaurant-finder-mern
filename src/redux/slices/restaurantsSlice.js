@@ -8,6 +8,10 @@ export const slice = createSlice({
     error: null,
   },
   reducers: {
+    resetState: (state) => {
+      state.restaurants = [];
+      state.error = null;
+    },
     changeCurrentRestaurants: (state, action) => {
       state.restaurants = action.payload;
     },
@@ -20,7 +24,12 @@ export const slice = createSlice({
   },
 });
 
-const { changeCurrentRestaurants, setError, unsetError } = slice.actions;
+export const {
+  resetState,
+  changeCurrentRestaurants,
+  setError,
+  unsetError,
+} = slice.actions;
 
 export const fetchRestaurantsByDefault = (queryData) => async (dispatch) => {
   try {

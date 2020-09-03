@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
+import { Redirect } from 'react-router-dom';
 import Select from 'react-select';
 import makeAnimated from 'react-select/animated';
 
-import { useSelector, useDispatch } from 'react-redux';
-import { fetchRestaurantsByDefault } from '../../redux/slices/restaurantsSlice';
+import { useDispatch } from 'react-redux';
+import {
+  fetchRestaurantsByDefault,
+  resetState,
+} from '../../redux/slices/restaurantsSlice';
 
 import './Homepage.css';
 import './customSelects.css';
@@ -42,8 +46,8 @@ const limitsOptions = limits.map((option) => ({
 const animatedComponents = makeAnimated();
 
 const Homepage = () => {
-  const error = useSelector((state) => state.restaurants.error);
   const dispatch = useDispatch();
+  const [redirect, setRedirect] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     borough: [],
@@ -72,8 +76,12 @@ const Homepage = () => {
 
   const onSubmit = async (e) => {
     e.preventDefault();
+    dispatch(resetState());
     dispatch(fetchRestaurantsByDefault(formData));
+    setRedirect(true);
   };
+
+  if (redirect) return <Redirect to='/restaurants' />;
 
   return (
     <div className='Homepage'>
