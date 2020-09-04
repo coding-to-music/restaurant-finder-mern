@@ -91,3 +91,16 @@ button {
 .orange {
   color: var(--orange);
 }
+
+.MainContainer {
+  min-height: 100vh;
+  background: rgb(238, 62, 75);
+  background: linear-gradient(
+    131deg,
+    rgba(238, 62, 75, 1) 0%,
+    rgba(234, 152, 0, 1) 100%
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

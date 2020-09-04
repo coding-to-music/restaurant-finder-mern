@@ -86,7 +86,7 @@ const Homepage = () => {
   if (redirect) return <Redirect to='/restaurants' />;
 
   return (
-    <div className='Homepage'>
+    <div className='MainContainer'>
       <div className='SearchBlock'>
         <form onSubmit={(e) => onSubmit(e)}>
           <div className='formGroupRow'>
