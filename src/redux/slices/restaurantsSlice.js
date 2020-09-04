@@ -42,8 +42,10 @@ export const fetchRestaurantsByDefault = (queryData) => async (dispatch) => {
       params: queryData,
     });
     dispatch(changeCurrentRestaurants(response.data.fetchedRestaurants));
+    dispatch(setLoading(false));
   } catch (error) {
     dispatch(setError(error));
+    dispatch(setLoading(false));
     setTimeout(() => dispatch(unsetError()), 5000);
   }
 };
