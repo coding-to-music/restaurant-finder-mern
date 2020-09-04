@@ -4,6 +4,7 @@ import './App.css';
 
 import Navbar from './components/Navbar/Navbar';
 import Homepage from './components/Homepage/Homepage';
+import Restaurants from './components/Restaurants/Restaurants';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Navbar />
       <Switch>
         <Route path='/' exact component={Homepage} />
+        <Route path='/restaurants' exact component={Restaurants} />
       </Switch>
     </div>
   );
