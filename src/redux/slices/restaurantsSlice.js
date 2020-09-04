@@ -6,6 +6,7 @@ export const slice = createSlice({
   initialState: {
     restaurants: [],
     error: null,
+    isLoading: false,
   },
   reducers: {
     resetState: (state) => {
@@ -21,6 +22,9 @@ export const slice = createSlice({
     unsetError: (state) => {
       state.error = null;
     },
+    setLoading: (state, action) => {
+      state.isLoading = action.payload;
+    },
   },
 });
 
@@ -29,6 +33,7 @@ export const {
   changeCurrentRestaurants,
   setError,
   unsetError,
+  setLoading,
 } = slice.actions;
 
 export const fetchRestaurantsByDefault = (queryData) => async (dispatch) => {
