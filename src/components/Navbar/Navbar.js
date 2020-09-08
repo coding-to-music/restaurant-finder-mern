@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import './Navbar.css';
 
@@ -8,8 +8,16 @@ import LocationPin from '../../resources/images/location-pin.png';
 import ApartmentBlock from '../../resources/images/apartment-block.png';
 
 const Navbar = () => {
+  const [navClasses, setNavClasses] = useState('Navbar NavbarOnTop');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 55 && navClasses !== 'Navbar') setNavClasses('Navbar');
+    if (window.scrollY <= 55 && navClasses === 'Navbar')
+      setNavClasses('Navbar NavbarOnTop');
+  });
+
   return (
-    <div className='Navbar'>
+    <div className={navClasses}>
       <div className='container'>
         <a href='/' className='NavbarLogo'>
           <img src={Logo} alt='Logo' />

@@ -1,8 +1,13 @@
 .Navbar {
   position: fixed;
+  z-index: 1000;
   width: 100%;
-  padding: 1rem 0;
+  padding: 10px;
   color: #fff;
+  background-color: #424242;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+  border-bottom: 10px solid #575757;
+  transition: all 0.2s ease-out;
 }
 
 .Navbar .container {
@@ -16,7 +21,7 @@
 }
 
 .NavbarLogo img {
-  max-width: 100px;
+  max-width: 70px;
   margin-right: 0.5rem;
   transition: 0.3s ease-out;
 }
@@ -45,7 +50,8 @@
   align-items: center;
   min-width: 0;
   font-family: 'Cuddly', sans-serif;
-  font-size: 1.5rem;
+  font-size: 1rem;
+  letter-spacing: 2px;
   padding: 5px 16px;
   border-radius: 20px;
   border: 7px solid;
@@ -85,10 +91,30 @@
 }
 
 .Navbar nav img {
-  max-width: 70px;
+  max-width: 60px;
   transition: transform 0.1s ease-out;
 }
 
 .Navbar nav a:hover img {
   transform: scale(1.05);
+}
+
+/* ============ NavbarOnTop styling ============ */
+.Navbar.NavbarOnTop {
+  padding: 1rem;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.NavbarOnTop .NavbarLogo img {
+  max-width: 100px;
+}
+
+.NavbarOnTop nav a {
+  font-size: 1.5rem;
+}
+
+.NavbarOnTop nav img {
+  max-width: 70px;
 }
