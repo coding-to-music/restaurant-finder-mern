@@ -1,0 +1,131 @@
+.restaurants-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+  padding-top: 11rem;
+}
+
+.restaurant-block {
+  min-width: 47%;
+  max-width: 47%;
+  background: var(--navyBlue);
+  margin: 10px 1rem;
+  padding: 0.5rem 2rem;
+  border: 7px solid var(--navyBlueDark);
+  border-radius: 20px;
+  color: #f9f9f9;
+}
+
+.restaurant-block .heading {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 2rem;
+  align-items: center;
+}
+
+.restaurant-block h1 {
+  font-family: 'Cuddly', sans-serif;
+  font-weight: lighter;
+}
+
+.restaurant-block .imgContainer {
+  max-width: 70px;
+  margin-left: 10px;
+  position: relative;
+}
+
+.restaurant-block .heading img {
+  max-width: 100%;
+}
+
+.restaurant-block .imgContainer p {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  z-index: 10;
+  font-family: 'Cuddly', sans-serif;
+  font-weight: lighter;
+  color: #1f1f1f;
+}
+
+.restaurant-block .divider {
+  margin: 5px 0;
+  border-radius: 200px;
+  height: 7px;
+  width: 100%;
+  background-color: var(--pinkDark);
+}
+
+.restaurant-block .content {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.5rem;
+  padding: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.restaurant-block .content .first-col {
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.restaurant-block .content .first-col .top {
+  text-align: right;
+}
+
+.restaurant-block .content .first-col .top h2 {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.restaurant-block .content .first-col .top h2 img {
+  max-width: 50px;
+  margin-right: 8px;
+}
+
+.restaurant-block .content .first-col .bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.restaurant-block .content .first-col .bottom h3,
+.restaurant-block .content .first-col .bottom h4 {
+  display: flex;
+  align-items: center;
+}
+
+.restaurant-block .content .first-col .bottom h3 img,
+.restaurant-block .content .first-col .bottom h4 img {
+  max-width: 40px;
+  margin-right: 5px;
+}
+
+.restaurant-block .content .second-col {
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.restaurant-block .content img {
+  max-width: 70%;
+}
+
+.restaurant-block a {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  margin: 1rem 0;
+  text-align: center;
+  background-color: var(--pink);
+  border: 7px solid var(--pinkDark);
+  border-radius: 20px;
+  font-family: 'Cuddly', sans-serif;
+  font-size: 1.5rem;
+}
