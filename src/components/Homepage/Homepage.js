@@ -81,8 +81,8 @@ const Homepage = () => {
     e.preventDefault();
     dispatch(resetState());
     dispatch(setLoading(true));
-    dispatch(changeCurrentLimit(formData.queryPage));
-    dispatch(changeCurrentPage(formData.queryLimit));
+    dispatch(changeCurrentLimit(formData.queryLimit));
+    dispatch(changeCurrentPage(formData.queryPage));
     dispatch(fetchRestaurantsByDefault(formData));
     setRedirect(true);
   };
