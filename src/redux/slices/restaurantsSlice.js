@@ -8,6 +8,7 @@ export const slice = createSlice({
     restaurants: [],
     error: null,
     isLoading: false,
+    totalCount: 1,
   },
   reducers: {
     resetState: (state) => {
@@ -29,6 +30,9 @@ export const slice = createSlice({
     saveCurrentFormData: (state, action) => {
       state.currentFormData = action.payload;
     },
+    setTotalCount: (state, action) => {
+      state.totalCount = action.payload;
+    },
   },
 });
 
@@ -39,6 +43,7 @@ export const {
   unsetError,
   setLoading,
   saveCurrentFormData,
+  setTotalCount,
 } = slice.actions;
 
 export const fetchRestaurantsByDefault = (queryData) => async (dispatch) => {
@@ -46,7 +51,12 @@ export const fetchRestaurantsByDefault = (queryData) => async (dispatch) => {
     const response = await axios.get('/api/searchRestaurants/byDefault', {
       params: queryData,
     });
-    dispatch(changeCurrentRestaurants(response.data.fetchedRestaurants));
+    dispatch(
+      changeCurrentRestaurants(
+        response.data.fetchedRestaurants[0].paginatedResults
+      )
+    );
+    dispatch(setTotalCount(response.data.fetchedRestaurants[0].totalCount));
     dispatch(setLoading(false));
   } catch (error) {
     dispatch(setError(error));
