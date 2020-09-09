@@ -8,8 +8,6 @@ import {
   fetchRestaurantsByDefault,
   resetState,
   setLoading,
-  changeCurrentPage,
-  changeCurrentLimit,
   saveCurrentFormData,
 } from '../../redux/slices/restaurantsSlice';
 
@@ -82,8 +80,6 @@ const Homepage = () => {
     e.preventDefault();
     dispatch(resetState());
     dispatch(setLoading(true));
-    dispatch(changeCurrentLimit(formData.queryLimit));
-    dispatch(changeCurrentPage(formData.queryPage));
     dispatch(fetchRestaurantsByDefault(formData));
     dispatch(saveCurrentFormData(formData));
     setRedirect(true);
