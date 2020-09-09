@@ -10,6 +10,7 @@ import {
   setLoading,
   changeCurrentPage,
   changeCurrentLimit,
+  saveCurrentFormData,
 } from '../../redux/slices/restaurantsSlice';
 
 import './Homepage.css';
@@ -84,6 +85,7 @@ const Homepage = () => {
     dispatch(changeCurrentLimit(formData.queryLimit));
     dispatch(changeCurrentPage(formData.queryPage));
     dispatch(fetchRestaurantsByDefault(formData));
+    dispatch(saveCurrentFormData(formData));
     setRedirect(true);
   };
 
