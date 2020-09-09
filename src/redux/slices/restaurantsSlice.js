@@ -8,7 +8,7 @@ export const slice = createSlice({
     restaurants: [],
     error: null,
     isLoading: false,
-    totalCount: 1,
+    totalPageCount: 1,
   },
   reducers: {
     resetState: (state) => {
@@ -30,8 +30,8 @@ export const slice = createSlice({
     saveCurrentFormData: (state, action) => {
       state.currentFormData = action.payload;
     },
-    setTotalCount: (state, action) => {
-      state.totalCount = action.payload;
+    setTotalPageCount: (state, action) => {
+      state.totalPageCount = action.payload;
     },
   },
 });
@@ -43,7 +43,7 @@ export const {
   unsetError,
   setLoading,
   saveCurrentFormData,
-  setTotalCount,
+  setTotalPageCount,
 } = slice.actions;
 
 export const fetchRestaurantsByDefault = (queryData) => async (dispatch) => {
@@ -56,7 +56,14 @@ export const fetchRestaurantsByDefault = (queryData) => async (dispatch) => {
         response.data.fetchedRestaurants[0].paginatedResults
       )
     );
-    dispatch(setTotalCount(response.data.fetchedRestaurants[0].totalCount));
+    dispatch(
+      setTotalPageCount(
+        Math.ceil(
+          response.data.fetchedRestaurants[0].totalCount[0].count /
+            queryData.queryLimit
+        )
+      )
+    );
     dispatch(setLoading(false));
   } catch (error) {
     dispatch(setError(error));
