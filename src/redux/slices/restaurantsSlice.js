@@ -4,6 +4,7 @@ import axios from 'axios';
 export const slice = createSlice({
   name: 'restaurants',
   initialState: {
+    currentFormData: {},
     restaurants: [],
     error: null,
     isLoading: false,
@@ -33,6 +34,9 @@ export const slice = createSlice({
     changeCurrentLimit: (state, action) => {
       state.currentLimit = action.payload;
     },
+    saveCurrentFormData: (state, action) => {
+      state.currentFormData = action.payload;
+    },
   },
 });
 
@@ -44,6 +48,7 @@ export const {
   setLoading,
   changeCurrentLimit,
   changeCurrentPage,
+  saveCurrentFormData,
 } = slice.actions;
 
 export const fetchRestaurantsByDefault = (queryData) => async (dispatch) => {
