@@ -53,8 +53,16 @@ router.get('/byDefault', async (req, res) => {
 
     aggregationPipeline.push(
       { $project: { grades: 0, restaurant_id: 0 } },
-      { $skip: (queryPage - 1) * queryLimit },
-      { $limit: queryLimit }
+      {
+        $facet: {
+          paginatedResults: [{ $skip: queryPage - 1 }, { $limit: queryLimit }],
+          totalCount: [
+            {
+              $count: 'count',
+            },
+          ],
+        },
+      }
     );
 
     const restaurantCollection = databaseFunctions
