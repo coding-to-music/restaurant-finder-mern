@@ -8,8 +8,6 @@ export const slice = createSlice({
     restaurants: [],
     error: null,
     isLoading: false,
-    currentPage: 1,
-    currentLimit: 30,
   },
   reducers: {
     resetState: (state) => {
@@ -28,12 +26,6 @@ export const slice = createSlice({
     setLoading: (state, action) => {
       state.isLoading = action.payload;
     },
-    changeCurrentPage: (state, action) => {
-      state.currentPage = action.payload;
-    },
-    changeCurrentLimit: (state, action) => {
-      state.currentLimit = action.payload;
-    },
     saveCurrentFormData: (state, action) => {
       state.currentFormData = action.payload;
     },
@@ -46,8 +38,6 @@ export const {
   setError,
   unsetError,
   setLoading,
-  changeCurrentLimit,
-  changeCurrentPage,
   saveCurrentFormData,
 } = slice.actions;
 
