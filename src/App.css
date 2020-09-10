@@ -56,7 +56,10 @@ input {
 
 button {
   outline: none;
+  border: none;
   cursor: pointer;
+  font: inherit;
+  background: inherit;
 }
 
 .container {
