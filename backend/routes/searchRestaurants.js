@@ -137,4 +137,23 @@ router.get('/byNeighborhood', async (req, res) => {
   }
 });
 
+router.get('/byId', async (req, res) => {
+  const { id } = req.query;
+
+  try {
+    const restaurantCollection = databaseFunctions
+      .getDatabase()
+      .collection('restaurants');
+
+    const fetchedRestaurants = await restaurantCollection.findOne({
+      _id: new ObjectID(id),
+    });
+
+    res.status(200).json(fetchedRestaurants);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Internal server error' });
+  }
+});
+
 module.exports = router;
