@@ -8,7 +8,6 @@ import {
   fetchRestaurantsByDefault,
   resetState,
   setLoading,
-  saveCurrentFormData,
 } from '../../redux/slices/restaurantsSlice';
 
 import './Homepage.css';
@@ -81,7 +80,6 @@ const Homepage = () => {
     dispatch(resetState());
     dispatch(setLoading(true));
     dispatch(fetchRestaurantsByDefault(formData));
-    dispatch(saveCurrentFormData(formData));
     setRedirect(true);
   };
 

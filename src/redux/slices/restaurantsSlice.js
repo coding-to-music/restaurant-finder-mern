@@ -64,6 +64,7 @@ export const fetchRestaurantsByDefault = (queryData) => async (dispatch) => {
         )
       )
     );
+    dispatch(saveCurrentFormData(queryData));
     dispatch(setLoading(false));
   } catch (error) {
     dispatch(setError(error));
