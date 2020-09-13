@@ -65,7 +65,11 @@ const Restaurants = () => {
           </div>
           <div className='second-col'>{selectIcon(restaurant.cuisine)}</div>
         </div>
-        <a href={`restaurant?id=${restaurant._id}`} target='_blank'>
+        <a
+          href={`restaurant?id=${restaurant._id}`}
+          target='_blank'
+          rel='noopener noreferrer'
+        >
           Check It
         </a>
       </div>
