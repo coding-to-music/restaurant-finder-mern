@@ -7,7 +7,6 @@ import { useDispatch } from 'react-redux';
 import {
   fetchRestaurantsByDefault,
   resetState,
-  setLoading,
 } from '../../redux/slices/restaurantsSlice';
 
 import './Homepage.css';
@@ -78,7 +77,6 @@ const Homepage = () => {
   const onSubmit = async (e) => {
     e.preventDefault();
     dispatch(resetState());
-    dispatch(setLoading(true));
     dispatch(fetchRestaurantsByDefault(formData));
     setRedirect(true);
   };

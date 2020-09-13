@@ -48,6 +48,7 @@ export const {
 
 export const fetchRestaurantsByDefault = (queryData) => async (dispatch) => {
   try {
+    dispatch(setLoading(true));
     const response = await axios.get('/api/searchRestaurants/byDefault', {
       params: queryData,
     });
