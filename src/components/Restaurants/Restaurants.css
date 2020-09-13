@@ -1,9 +1,51 @@
+/* ====== Pagination Buttons ====== */
+.pagination-container {
+  margin-top: 11rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 10px solid var(--tealDark);
+  border-radius: 10px;
+}
+
+.pagination-container.last {
+  margin-top: 2rem;
+  margin-bottom: 5rem;
+}
+
+.pagination-block {
+  padding: 1rem;
+  font-size: 2rem;
+  font-family: 'Cuddly', sans-serif;
+  background: var(--tealLight);
+  min-width: 120px;
+  text-align: center;
+  border-right: 7px solid var(--tealDark);
+  color: var(--tealDark);
+  transition: all 0.2s ease-out;
+}
+
+.pagination-block:last-child {
+  border-right: none;
+}
+
+.pagination-block:hover {
+  background: var(--tealDark);
+  border-right: 7px solid var(--tealLight);
+  color: var(--tealLight);
+}
+
+.pagination-block:last-child:hover {
+  border-right: 7px solid var(--tealDark);
+}
+
+/* ====== Restaurants Cards ====== */
 .restaurants-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   width: 100%;
-  padding-top: 11rem;
+  margin-top: 2rem;
 }
 
 .restaurant-block {

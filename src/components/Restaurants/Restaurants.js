@@ -4,6 +4,7 @@ import selectIcon from './utils/selectIcon';
 import changeCuisineNameIfTooLong from './utils/changeCuisineName';
 
 import Spinner from '../UI/Spinner/Spinner';
+import PaginationBlock from './PaginationBlock';
 
 import './Restaurants.css';
 
@@ -18,8 +19,11 @@ const Restaurants = () => {
   );
   const isLoading = useSelector((state) => state.restaurants.isLoading);
   const error = useSelector((state) => state.restaurants.error);
-  const currentPage = useSelector((state) => state.restaurants.currentPage);
-  const currentLimit = useSelector((state) => state.restaurants.currentLimit);
+  const currentPage = useSelector(
+    (state) => state.restaurants.currentFormData.queryPage
+  );
+  const pageLimit = useSelector((state) => state.restaurants.totalPageCount);
+  const queryData = useSelector((state) => state.restaurants.currentFormData);
 
   if (isLoading)
     return (
@@ -66,13 +70,22 @@ const Restaurants = () => {
     );
   });
 
-  console.log(fetchedRestaurants);
-
   return (
     <div className='MainContainer'>
+      <PaginationBlock
+        queryData={queryData}
+        pageLimit={pageLimit}
+        currentPage={currentPage}
+      />
       <div className='container restaurants-container'>
         {fetchedRestaurantsBlocks}
       </div>
+      <PaginationBlock
+        isLast
+        queryData={queryData}
+        pageLimit={pageLimit}
+        currentPage={currentPage}
+      />
     </div>
   );
 };
