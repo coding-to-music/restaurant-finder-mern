@@ -4,7 +4,6 @@ import { useDispatch } from 'react-redux';
 import { fetchRestaurantsByDefault } from '../../redux/slices/restaurantsSlice';
 
 export default ({ currentPage, pageLimit, queryData, isLast }) => {
-  console.log(isLast);
   const dispatch = useDispatch();
   const paginationClasses = isLast
     ? 'pagination-container last'
