@@ -1,68 +1,233 @@
+# restaurant-finder-mern
+
+# 🚀 Javascript full-stack 🚀
+
+## MERN Stack
+
+### React / Express / MongoDB / Redux
+
+https://github.com/coding-to-music/restaurant-finder-mern
+
+https://restaurant-finder-mern.herokuapp.com
+
+by Bartek Wilczyński https://github.com/bartekw2213
+
+https://github.com/bartekw2213/RestaurantFinder
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## GitHub
 
-In the project directory, you can run:
+```java
+git init
+git add .
+git remote remove origin
+git commit -m "first commit"
+git branch -M main
+git remote add origin git@github.com:coding-to-music/restaurant-finder-mern.git
+git push -u origin main
+```
 
-### `npm start`
+## Heroku
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```java
+heroku create restaurant-finder-mern
+```
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Heroku MongoDB Environment Variables
 
-### `npm test`
+```java
+heroku config:set
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+heroku config:set PUBLIC_URL="https://restaurant-finder-mern.herokuapp.com"
+```
 
-### `npm run build`
+## Push to Heroku
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```java
+git push heroku
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+# or
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+npm run deploy
+```
 
-### `npm run eject`
+### Heroku Buildpack
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+See this repo for more info about setting up a node/react app on heroku:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+https://github.com/mars/heroku-cra-node
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```java
+heroku buildpacks
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+heroku buildpacks --help
 
-## Learn More
+heroku buildpacks:clear
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```java
+heroku buildpacks
+```
 
-### Code Splitting
+Output:
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+```java
+=== restaurant-finder-mern Buildpack URL
+heroku/nodejs
+```
 
-### Analyzing the Bundle Size
+### Notice we are doing a SET and then and ADD
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+```java
+heroku buildpacks:set heroku/nodejs
 
-### Making a Progressive Web App
+heroku buildpacks:add mars/create-react-app
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+Output:
 
-### Advanced Configuration
+```java
+Buildpack added. Next release on restaurant-finder-mern will use:
+  1. heroku/nodejs
+  2. mars/create-react-app
+Run git push heroku main to create a new release using these buildpacks.
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+### Lets try reversing the order
 
-### Deployment
+```java
+heroku buildpacks:set mars/create-react-app
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+heroku buildpacks:add heroku/nodejs
+```
 
-### `npm run build` fails to minify
+```java
+heroku buildpacks
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Output:
+
+```java
+=== restaurant-finder-mern Buildpack URL
+heroku/nodejs
+```
+
+### Push to Heroku
+
+```
+git push heroku
+```
+
+## Error:
+
+```java
+2022-04-09T03:12:56.076028+00:00 app[web.1]: ls: cannot access '/app/build/static/js/*.js': No such file or directory
+2022-04-09T03:12:56.076252+00:00 app[web.1]: Error injecting runtime env: bundle not found '/app/build/static/js/*.js'. See: https://github.com/mars/create-react-app-buildpack/blob/master/README.md#user-content-custom-bundle-location
+2022-04-09T03:12:56.253505+00:00 app[web.1]: Starting log redirection...
+2022-04-09T03:12:56.253698+00:00 app[web.1]: Starting nginx...
+```
+
+Attempted this:
+
+```java
+heroku config:set JS_RUNTIME_TARGET_BUNDLE=./client/build/static/js/*.js
+
+heroku config:set JS_RUNTIME_TARGET_BUNDLE=/build/static/js/*.js
+
+# and to remote it:
+
+heroku config:unset JS_RUNTIME_TARGET_BUNDLE
+
+```
+
+## update npm packages
+
+```java
+npm install -g npm-check-updates
+```
+
+Output:
+
+```java
+removed 3 packages, changed 263 packages, and audited 264 packages in 10s
+
+29 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+```
+
+```java
+ncu -u
+```
+
+Output:
+
+```java
+Upgrading /mnt/volume_nyc1_01/restaurant-finder-mern/package.json
+[====================] 15/15 100%
+
+ axios                ^0.21.0  →  ^0.26.1
+ bcrypt                ^5.0.0  →   ^5.0.1
+ body-parser          ^1.19.0  →  ^1.20.0
+ cookie-parser         ^1.4.5  →   ^1.4.6
+ dotenv                ^8.2.0  →  ^16.0.0
+ express              ^4.17.1  →  ^4.17.3
+ express-fileupload    ^1.2.0  →   ^1.3.1
+ js-cookie             ^2.2.1  →   ^3.0.1
+ mongoose            ^5.10.13  →  ^6.2.10
+ nodemon               ^2.0.6  →  ^2.0.15
+ reactjs-popup         ^2.0.4  →   ^2.0.5
+ validator           ^13.1.17  →  ^13.7.0
+
+Run npm install to install new versions.
+```
+
+```java
+npm install
+```
+
+Output:
+
+```java
+added 58 packages, removed 42 packages, changed 89 packages, and audited 299 packages in 7s
+
+32 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+```
+
+## Client directory
+
+```java
+cd client
+
+ncu -u
+```
+
+```java
+Upgrading /mnt/volume_nyc1_01/restaurant-finder-mern/client/package.json
+[====================] 18/18 100%
+
+ @testing-library/jest-dom     ^5.11.4  →  ^5.16.4
+ @testing-library/react        ^11.1.0  →  ^13.0.0
+ @testing-library/user-event  ^12.1.10  →  ^14.0.4
+ axios                         ^0.21.0  →  ^0.26.1
+ dotenv                         ^8.2.0  →  ^16.0.0
+ js-cookie                      ^2.2.1  →   ^3.0.1
+ node-sass                     ^4.14.1  →   ^7.0.1
+ react                         ^17.0.1  →  ^18.0.0
+ react-dom                     ^17.0.1  →  ^18.0.0
+ react-redux                    ^7.2.2  →   ^7.2.8
+ react-router-dom               ^5.2.0  →   ^6.3.0
+ react-scripts                   4.0.0  →    5.0.0
+ reactjs-popup                  ^2.0.4  →   ^2.0.5
+ redux                          ^4.0.5  →   ^4.1.2
+ redux-thunk                    ^2.3.0  →   ^2.4.1
+ web-vitals                     ^0.2.4  →   ^2.1.4
+
+Run npm install to install new versions.
+```
